@@ -19,6 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/superadmin', [SuperAdminController::class, 'index'])->name('superadmin')->middleware('superadmin');
+Route::get('/superadmin/users', [SuperAdminController::class, 'users'])->name('superadmin.users');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('/frontoffice', [FrontOfficeController::class, 'index'])->name('frontoffice')->middleware('frontoffice');
 Route::get('/backoffice', [BackOfficeController::class, 'index'])->name('backoffice')->middleware('backoffice');
